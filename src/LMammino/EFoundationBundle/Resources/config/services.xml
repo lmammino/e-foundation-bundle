@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="e_foundation.doctrine.orm.tools.resolve_target_entity_listener.class">LMammino\EFoundationBundle\Doctrine\ORM\Tools\ResolveTargetEntityListener</parameter>
+    </parameters>
+
+    <services>
+        <service id="e_foundation.doctrine.orm.tools.resolve_target_entity_listener"
+                 class="%e_foundation.doctrine.orm.tools.resolve_target_entity_listener.class%">
+            <tag name="doctrine.event_listener" event="loadClassMetadata"/>
+        </service>
+    </services>
+
+</container>

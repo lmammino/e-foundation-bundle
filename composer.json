@@ -1,0 +1,23 @@
+{
+    "name": "lmammino/e-foundation-bundle",
+    "description": "Symfony integration for lmammino/e-foundation",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luciano Mammino",
+            "email": "lucianomammino@gmail.com"
+        }
+    ],
+    "require": {
+        "php":                          ">=5.4",
+
+        "doctrine/doctrine-bundle":     "~1.4",
+        "lmammino/e-foundation":        "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "LMammino\\EFoundationBundle\\": "src/"
+        }
+    }
+}
