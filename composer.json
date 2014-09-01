@@ -1,6 +1,7 @@
 {
     "name": "lmammino/e-foundation-bundle",
     "description": "Symfony integration for lmammino/e-foundation",
+    "type": "symfony-bundle",
     "minimum-stability": "dev",
     "license": "MIT",
     "authors": [
