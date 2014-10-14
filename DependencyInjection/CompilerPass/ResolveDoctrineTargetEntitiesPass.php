@@ -39,9 +39,17 @@ class ResolveDoctrineTargetEntitiesPass implements CompilerPassInterface
                 sprintf('(service "%s")', $listenerServiceName));
         }
 
+        $resolves = $this->resolves;
+        if (
+            $container->hasParameter('e_foundation.resolves') &&
+            (is_array($projectResolves = $container->getParameter('e_foundation.resolves')))
+        ){
+            $resolves = array_merge($resolves, $projectResolves);
+        }
+
         $resolveTargetEntityListener = $container->findDefinition($listenerServiceName);
 
-        foreach ($this->resolves as $interface => $model) {
+        foreach ($resolves as $interface => $model) {
             $resolveTargetEntityListener
                 ->addMethodCall('addResolveTargetEntity', array(
                     $interface,
